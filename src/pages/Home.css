@@ -1,0 +1,16 @@
+.home {
+    /* background-color: gainsboro; */
+    /* height: 90vh; */
+    max-width: 100vw;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tourbox {
+    /* background-color: red; */
+    max-width: 1000px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
