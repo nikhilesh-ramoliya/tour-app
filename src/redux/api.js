@@ -12,9 +12,6 @@ API.interceptors.request.use((req) => {
             a = JSON.parse(localStorage.getItem("profile")).token
             req.headers.Authorization = a
         }
-        console.log('====================================');
-        console.log(a);
-        console.log('====================================');
     }
     return req
 })
@@ -23,4 +20,7 @@ export const login = (FormData) => API.post("/user/signin", FormData);
 export const signup = (FormData) => API.post("/user/signup", FormData);
 export const googlesignin = (FormData) => API.post("/user/googlesignin", FormData);
 export const createTour = (FormData) => API.post("/tour", FormData);
+export const editTour = (FormData) => API.post("/tour/edit", FormData);
+export const deleteTour = (FormData) => API.delete(`/tour/${FormData}`);
 export const getTours = () => API.get("/tour");
+export const getToursByUser = () => API.get("/tour/user");

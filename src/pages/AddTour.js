@@ -5,19 +5,26 @@ import React, { useState } from 'react'
 import "./AddTour.css"
 import FileBase from "react-file-base64";
 import { useSelector, useDispatch } from 'react-redux';
-import { createTour } from './../redux/feature/tourSlice';
-import { useNavigate } from 'react-router-dom';
+import { createTour, editTour } from './../redux/feature/tourSlice';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
 function AddTour() {
     const dispatch = useDispatch();
+    const { id } = useParams();
     const navigate = useNavigate();
-    const { user } = useSelector(state => state.auth)
-    const initialstate = {
+    const { userTours } = useSelector(state => state.tour)
+    var initialstate = {
         title: "",
         discription: "",
         tags: [],
+    }
+    if (id) {
+        const tours = userTours.filter((item) => {
+            return item._id == id
+        })
+        initialstate = tours[0]
     }
 
     const [tourData, setTourdata] = useState(initialstate);
@@ -44,7 +51,12 @@ function AddTour() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createTour({ tourData, toast, navigate }))
+        if (id === undefined) {
+            console.log("handle submit");
+            dispatch(createTour({ tourData, toast, navigate }))
+            return;
+        }
+        dispatch(editTour({ tourData, toast, navigate }))
     }
 
 
