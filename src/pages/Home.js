@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import React from 'react'
 import "./Home.css"
 import { useSelector } from 'react-redux';
 import TourCard from './../components/TourCard';
@@ -17,7 +16,7 @@ function Home() {
         return str
     }
 
-    if (tours == "error") {
+    if (tours === "error") {
         return <Typography>
             error
         </Typography>
@@ -32,6 +31,7 @@ function Home() {
                 <>
                     <Box display="flex" className="tourbox">
                         {
+                            (typeof tours === "Array") &&
                             tours?.map(({ title, imageFile, tags, _id, name, discription }) => {
                                 if (title.includes(search)) {
                                     return <TourCard key={_id} title={title} imageFile={imageFile} tags={tags} _id={_id} name={name} discription={excerpt(discription)} />
