@@ -3,16 +3,15 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import { CardMedia, Chip, Typography } from '@mui/material/';
-import { width } from '@mui/system';
 import moment from 'moment/moment';
 
 const BlogDiscription = () => {
     const { id } = useParams();
     const data = useSelector(state => state.tour.tours);
     const tour = data?.filter((item) => {
-        return item._id == id
+        return item._id === id
     })
-    const { title, imageFile, discription, tags, _id, createdAt } = tour[0];
+    const { title, imageFile, discription, tags, createdAt } = tour[0];
     return (
         <Box maxWidth="1000px" margin="auto" display="flex" alignItems="center" flexDirection="column" justifyContent="center">
             <Typography variant='h3' margin="10px">{title}</Typography>

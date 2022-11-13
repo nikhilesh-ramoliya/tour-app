@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
 import styles from "./Header.module.css";
 import { Link, useNavigate } from 'react-router-dom';
-import Home from './../pages/Home';
 import { GoogleLogout } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { SETUSER } from '../redux/feature/authSlice';
 import { toast } from 'react-toastify';
 import { setTour } from '../redux/feature/tourSlice';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import { changesearch } from '../redux/feature/mySlice';
 
 function Header() {

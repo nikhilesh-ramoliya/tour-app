@@ -31,6 +31,7 @@ function Home() {
                 <>
                     <Box display="flex" className="tourbox">
                         {
+                            // eslint-disable-next-line array-callback-return
                             tours?.map(({ title, imageFile, tags, _id, name, discription }) => {
                                 if (title.includes(search)) {
                                     return <TourCard key={_id} title={title} imageFile={imageFile} tags={tags} _id={_id} name={name} discription={excerpt(discription)} />

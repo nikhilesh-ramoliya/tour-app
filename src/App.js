@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { SETUSER } from "./redux/feature/authSlice";
 import Header from "./components/Header";
 import AddTour from "./pages/AddTour";
@@ -13,7 +13,6 @@ import BlogDiscription from './pages/BlogDiscription';
 import { getTours, getToursByUser } from "./redux/feature/tourSlice";
 import { Box } from "@mui/material";
 import Dashboard from './pages/Dashboard';
-import EditTour from "./pages/EditTour";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,12 +31,14 @@ function App() {
   // console.log(userid);
   useEffect(() => {
     dispatch(SETUSER(user1));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
     if (user) {
       dispatch(getTours(toast))
       dispatch(getToursByUser());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
 

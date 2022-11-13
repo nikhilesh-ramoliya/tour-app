@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, applyMiddleware } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as api from "../api"
 
 export const login = createAsyncThunk("auth/login", async ({ values, navigate, toast }) => {
