@@ -6,7 +6,7 @@ export const createTour = createAsyncThunk("/tour",
         try {
             const response = await api.createTour(tourData);
             toast.success("created sucessfully")
-            navigate("/");
+            navigate("/tour-app/");
             return response.data
         } catch (error) {
             console.log(error);
@@ -18,7 +18,7 @@ export const editTour = createAsyncThunk("/edittour",
         try {
             const response = await api.editTour(tourData);
             toast.success("Updated sucessfully")
-            navigate("/");
+            navigate("/tour-app/");
             console.log(response.data);
             return response.data
         } catch (error) {
