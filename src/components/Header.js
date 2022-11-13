@@ -57,7 +57,7 @@ function Header() {
                                 localStorage.clear();
                                 dispatch(setTour())
                                 dispatch(SETUSER(null))
-                                navigate("/")
+                                navigate("/tour-app/")
                             }}
                             render={(renderProps) => (
                                 <button
