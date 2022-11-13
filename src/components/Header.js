@@ -17,7 +17,7 @@ function Header() {
     return (
         <div className={styles.header}>
             <Box width="1000px" margin='auto' sx={{ background: "transparent" }} className={styles.header} >
-                <Link to="/tour-app/">
+                <Link to="/">
                     <div className={styles.logo}>
                         logo
                     </div>
