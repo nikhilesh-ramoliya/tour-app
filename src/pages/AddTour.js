@@ -1,5 +1,4 @@
 import { Button, TextField } from '@mui/material';
-import { useFormik } from 'formik';
 import ChipInput from 'material-ui-chip-input';
 import React, { useState } from 'react'
 import "./AddTour.css"
@@ -22,7 +21,7 @@ function AddTour() {
     }
     if (id) {
         const tours = userTours.filter((item) => {
-            return item._id == id
+            return item._id === id
         })
         initialstate = tours[0]
     }
@@ -43,7 +42,7 @@ function AddTour() {
     const handleDeleteTag = (tagD) => {
         setTourdata({
             ...tourData,
-            tags: tourData.tags.filter((tag) => tag != tagD)
+            tags: tourData.tags.filter((tag) => tag !== tagD)
         })
     }
     const handleClear = () => {

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from "formik";
-import axios from "axios";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -10,9 +9,7 @@ import Typography from '@mui/material/Typography'
 import { useDispatch, useSelector } from "react-redux";
 import { googlesignin, login } from '../redux/feature/authSlice';
 import GoogleLogin from "react-google-login";
-import { SETUSER } from "../redux/feature/authSlice";
 import { gapi } from "gapi-script";
-import { getTours, setTour, setTours } from '../redux/feature/tourSlice';
 
 const initialValues = {
     email: "",
@@ -21,7 +18,8 @@ const initialValues = {
 
 
 function Login({ please }) {
-    const clientId = process.env.REACT_APP_CLIENT_id
+    const clientId = "746987253016-u0obu7o723eefllm8kdvmpd4apjc1kps.apps.googleusercontent.com"
+
     useEffect(() => {
         const initClient = () => {
             gapi.client.init({
@@ -41,7 +39,7 @@ function Login({ please }) {
             dispatch(login({ values, navigate, toast }))
         }
     });
-    const { user, loading, error } = useSelector(state => state.auth);
+    const { user, loading } = useSelector(state => state.auth);
 
     const onSuccess = (res) => {
         // dispatch(SETUSER(res.profileObj))
