@@ -19,14 +19,14 @@ function Header() {
     return (
         <div className={styles.header}>
             <Box width="1000px" margin='auto' sx={{ background: "transparent" }} className={styles.header} >
-                <Link to="/">
+                <Link to="/tour-app/">
                     <div className={styles.logo}>
                         logo
                     </div>
                 </Link>
                 <ul>
                     <li>{user ? `Logged is as: ${user?.result?.name}` : "please login"}</li>
-                    <Link to="/" onClick={() => {
+                    <Link to="/tour-app/" onClick={() => {
                         !user && toast.warn("login first")
                     }}>
                         <li>
@@ -34,14 +34,14 @@ function Header() {
                         </li>
                     </Link>
                     {user ? <>
-                        <Link to="/AddTour" onClick={() => {
+                        <Link to="/tour-app/AddTour" onClick={() => {
                             !user && toast.warn("login first")
                         }}>
                             <li>
                                 Add tour
                             </li>
                         </Link>
-                        <Link to="/dashboard" onClick={() => {
+                        <Link to="/tour-app/dashboard" onClick={() => {
                             !user && toast.warn("login first")
                         }}>
                             <li>
