@@ -32,8 +32,7 @@ function Login({ please }) {
     }, []);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const clientId =
-        '569062168091-ulrc9ctju5plh0bdd7degdtvt32ncstc.apps.googleusercontent.com';
+    const clientId = "746987253016-u0obu7o723eefllm8kdvmpd4apjc1kps.apps.googleusercontent.com"
 
 
     const { values, handleSubmit, handleChange } = useFormik({
