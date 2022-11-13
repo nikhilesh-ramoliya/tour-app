@@ -5,7 +5,7 @@ export const login = createAsyncThunk("auth/login", async ({ values, navigate, t
     try {
         const respose = await api.login(values);
         toast.success("login sucessfull")
-        navigate("/tour-app/");
+        navigate("/");
         return respose.data;
     } catch (error) {
         toast.error(error.response.data.message);
@@ -16,7 +16,7 @@ export const signup = createAsyncThunk("auth/signup", async ({ values, navigate,
     try {
         const respose = await api.signup(values);
         toast.success("registered sucessfull")
-        navigate("/tour-app/");
+        navigate("/");
         return respose.data;
     } catch (error) {
         toast.error(error.response.data.message);
@@ -26,7 +26,7 @@ export const googlesignin = createAsyncThunk("auth/googlesignin", async ({ value
     try {
         const respose = await api.googlesignin(values);
         toast.success("google login sucessfull")
-        navigate("/tour-app/");
+        navigate("/");
         console.log("googlelogin :", respose.data);
         return respose.data;
     } catch (error) {
