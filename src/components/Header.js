@@ -24,7 +24,7 @@ function Header() {
                 </Link>
                 <ul>
                     <li>{user ? `Logged is as: ${user?.result?.name}` : "please login"}</li>
-                    <Link to="/tour-app/" onClick={() => {
+                    <Link to="/" onClick={() => {
                         !user && toast.warn("login first")
                     }}>
                         <li>
@@ -32,14 +32,14 @@ function Header() {
                         </li>
                     </Link>
                     {user ? <>
-                        <Link to="/tour-app/AddTour" onClick={() => {
+                        <Link to="/AddTour" onClick={() => {
                             !user && toast.warn("login first")
                         }}>
                             <li>
                                 Add tour
                             </li>
                         </Link>
-                        <Link to="/tour-app/dashboard" onClick={() => {
+                        <Link to="/dashboard" onClick={() => {
                             !user && toast.warn("login first")
                         }}>
                             <li>
