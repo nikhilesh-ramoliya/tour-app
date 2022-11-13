@@ -21,6 +21,7 @@ const initialValues = {
 
 
 function Login({ please }) {
+    const clientId = process.env.REACT_APP_CLIENT_id
     useEffect(() => {
         const initClient = () => {
             gapi.client.init({
@@ -32,8 +33,6 @@ function Login({ please }) {
     }, []);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const clientId =
-        '569062168091-ulrc9ctju5plh0bdd7degdtvt32ncstc.apps.googleusercontent.com';
 
 
     const { values, handleSubmit, handleChange } = useFormik({
