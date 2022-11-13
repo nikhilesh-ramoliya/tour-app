@@ -31,7 +31,6 @@ function Home() {
                 <>
                     <Box display="flex" className="tourbox">
                         {
-                            (typeof tours === "Array") &&
                             tours?.map(({ title, imageFile, tags, _id, name, discription }) => {
                                 if (title.includes(search)) {
                                     return <TourCard key={_id} title={title} imageFile={imageFile} tags={tags} _id={_id} name={name} discription={excerpt(discription)} />
