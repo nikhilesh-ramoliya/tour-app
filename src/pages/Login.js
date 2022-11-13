@@ -105,7 +105,7 @@ function Login({ please }) {
                         <Button variant='contained'
                             color='secondary'
                             onClick={() => {
-                                navigate("/signup")
+                                navigate("/tour-app/signup")
                             }}>
                             Sign up
                         </Button>

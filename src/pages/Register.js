@@ -91,7 +91,7 @@ function Register() {
                     <Button variant='contained'
                         color='secondary'
                         onClick={() => {
-                            navigate("/login")
+                            navigate("/tour-app/login")
                         }}
                     >
                         login
