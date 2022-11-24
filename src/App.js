@@ -19,19 +19,8 @@ function App() {
   const { user } = useSelector(state => state.auth);
   const user1 = JSON.parse(localStorage.getItem("profile"))
 
-  // var userid;
-  // if (user) {
-  //   const userpassword = user.result.password
-  //   if (userpassword) {
-  //     userid = user.result._id
-  //   } else {
-  //     userid = user.result._id.split(" ")[4].split('"')[1]
-  //   }
-  // }
-  // console.log(userid);
   useEffect(() => {
     dispatch(SETUSER(user1));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
     if (user) {
@@ -59,7 +48,7 @@ function App() {
           pauseOnHover
           theme="light"
         />
-        <Box maxWidth="1000px" margin="auto">
+        <Box maxWidth="1000px" margin="auto" >
           <Routes>
             <Route path="/" element={user ? <Home /> : <Login please={true} />} />
             <Route path="/AddTour" element={user ? <AddTour /> : <Login please={true} />} />
