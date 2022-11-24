@@ -61,7 +61,7 @@ function AddTour() {
 
     return (
         <div className='tour'>
-            <h1>{id ? "Edit" : "Add"} tour</h1>
+            <h1>Add tour</h1>
             <br /><br />
             <form >
                 <TextField

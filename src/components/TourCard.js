@@ -14,7 +14,7 @@ export default function TourCard({ title, imageFile, discription, tags, _id, edi
     const navigate = useNavigate();
     const dispatch = useDispatch()
     return (
-        <Card sx={{ maxWidth: 305, border: "2px solid black", margin: "10px", minWidth: 300, boxShadow: "4px 4px 10px 2px lightgrey" }}>
+        <Card sx={{ maxWidth: 305, margin: "10px", minWidth: 300, boxShadow: "4px 4px 10px 2px lightgrey" }}>
             <CardActionArea>
                 <CardMedia
                     component="img"

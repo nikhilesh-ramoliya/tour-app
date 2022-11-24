@@ -1,14 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import * as api from "../api";
 
 const mySlice = createSlice({
     name: "my",
     initialState: {
-        search: ""
-    },
-    reducers: {
-        changesearch: (state, action) => void (state.search = action.payload)
+        user: null,
+        error: " ",
+        loading: false
     }
 })
 
-export const { changesearch } = mySlice.actions
 export default mySlice.reducer;
